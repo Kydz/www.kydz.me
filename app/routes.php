@@ -16,5 +16,6 @@ Route::get('/', 'HomeController@v1');
 Route::get('/home', 'HomeController@v1');
 
 Route::get('users', function(){
-	return '12321';
+	$users = Users::all();
+	return View::make('users')->with('users', $users);
 });
