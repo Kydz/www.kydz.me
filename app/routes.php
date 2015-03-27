@@ -10,6 +10,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::pattern('cssPath', '(.*)');
+Route::get('css/{cssPath}', 'HomeController@css');
 
 Route::get('/', 'HomeController@v1');
 

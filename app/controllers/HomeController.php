@@ -21,7 +21,15 @@ class HomeController extends BaseController {
 	}
 
 	public function v1(){
-		
+		return View::make('blade.archive-list');
+	}
+
+	public function css($path){
+		$path = dirname(__FILE__).'\..\views\css\\'.$path;
+		$contents = File::get($path);
+		$response = Response::make($contents, 200);
+		$response->header('Content-Type', 'text/css');
+		return $response;
 	}
 
 }

@@ -1,0 +1,29 @@
+/********ARCHIVE*****START********/
+.archive_list{
+	width:70%;
+}
+
+.archive_list *{
+    margin: 0 0 15px 0;    
+	color:#333;
+}
+
+.archive_itme{
+    border-bottom: solid 1px #ccc;
+    margin-bottom: 25px;
+}
+
+.archive_list header{
+	font-size:24px;
+}
+.archive_list section{
+    min-height: 70px;
+}
+.archive_list footer{
+    text-align: right;
+}
+.archive_list footer span{
+    margin: 0 0 0 15px;
+    color: #777;
+}
+/********ARCHIVE*****END********/

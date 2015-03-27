@@ -1,0 +1,32 @@
+body{
+	font-family:"微软雅黑";
+}
+
+#wrapper { 
+	width:1000px;
+	margin:0 auto;
+}
+
+#wrapper nav{
+    height: 100px;
+}
+
+#wrapper nav header{
+    color:#111;
+}
+
+#wrapper nav li{
+    float: left;
+    display: block;
+    padding: 0 10px 0 10px;
+    font-size: 32px;
+}
+
+/********COMMON*****START********/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+/********COMMON*****END********/
