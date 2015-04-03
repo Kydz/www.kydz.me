@@ -16,7 +16,7 @@
         </div>
         <div class="section-mid"></div>
             <div class="menu-container">
-                 <div>{{HTML::linkAction('ArchiveController@showList', 'A', array(''))}}</div>
+                 <div><a href="#">A</a></div>
                  <div><a href="#">G</a></div>
                  <div><a href="#">O</a></div>
             </div>
