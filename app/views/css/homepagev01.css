@@ -2,35 +2,46 @@
 /* CSS Document */
 
 .main-body {
-	margin: 0 auto;
-	padding: 0px;
+    margin: 0 auto;
+    padding: 0px;
 }
 .fixed-bg {
-	position:absolute;
+    top: 0;
+    z-index: 1;
 }
-.section-top {
-	height:800px;
+.fixed-bg span {
+    display: block;
+    font-size: 150px;
+    font-family: "微软雅黑";
+    color: #f1f1f1;
+    margin-left: 50px;
+    text-align: left;
+    cursor: default;
 }
-
+[class^="section-"]{
+    margin: 0 auto;
+    width: 1000px;
+}
 .menu-container {
-	width:285px;
-	height:155px;
-	border-bottom:1px solid #ccc;
-	margin:250px auto;
-	padding:0 20px;
+    z-index: 999;
+    width:285px;
+    height:155px;
+    border-bottom:1px solid #ccc;
+    margin:0 auto;
+    padding:0 20px;
 }
 
 .menu-container div {
-	float:left;
-	height:75px;
-	width:75px;
-	margin:40px 10px;
+    float:left;
+    height:75px;
+    width:75px;
+    margin:40px 10px;
 }
 .menu-container div a{
     text-decoration: none;
     font-family: "微软雅黑";
     font-size: 100px;
     color: #333;
-	height:75px;
-	width:75px;
+    height:75px;
+    width:75px;
 }

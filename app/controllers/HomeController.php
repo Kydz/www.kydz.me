@@ -2,34 +2,20 @@
 
 class HomeController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-
-	public function showWelcome()
-	{
-		return View::make('hello');
-	}
-
-	public function v1(){
-		return View::make('blade.archive-list');
-	}
-
-	public function css($path){
-		$path = dirname(__FILE__).'\..\views\css\\'.$path;
-		$contents = File::get($path);
-		$response = Response::make($contents, 200);
-		$response->header('Content-Type', 'text/css');
-		return $response;
-	}
-
+    /*
+    |--------------------------------------------------------------------------
+    | Default Home Controller
+    |--------------------------------------------------------------------------
+    |
+    | You may wish to use controllers instead of, or in addition to, Closure
+    | based routes. That's great! Here is an example controller method to
+    | get you started. To route to this controller, just add the route:
+    |
+    |   Route::get('/', 'HomeController@showWelcome');
+    |
+    */
+    public function v1(){
+        // $link['archive'] = 
+        return View::make('blade.welcome.v1');
+    }
 }

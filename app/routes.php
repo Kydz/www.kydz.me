@@ -11,13 +11,14 @@
 |
 */
 Route::pattern('cssPath', '(.*)');
-Route::get('css/{cssPath}', 'HomeController@css');
+Route::get('css/{cssPath}', 'MiscFileController@getCSS');
+
+Route::pattern('jsPath', '(.*)');
+Route::get('js/{jsPath}', 'MiscFileController@getJS');
 
 Route::get('/', 'HomeController@v1');
 
 Route::get('/home', 'HomeController@v1');
 
-Route::get('users', function(){
-	$users = Users::all();
-	return View::make('users')->with('users', $users);
-});
+Route::get('/archive/{page}', 'ArchiveController@showList');
+Route::get('/archive', 'ArchiveController@showList');
