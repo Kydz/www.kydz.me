@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link href="css/homepagev01.css" rel="stylesheet" type="text/css" />
-<title>KYDZ</title>
+<title>SIMPLE IS GOOD | KYDZ</title>
 </head>
 
 <body>
