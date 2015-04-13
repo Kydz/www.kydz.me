@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration {
+class CreateArticleContentTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateUsersTable extends Migration {
      */
     public function up()
     {
-        Schema::create('users', function($table)
-        {
-            $table->increments('id');
-            $table->string('email')->unique();
-            $table->string('name');
+        Schema::create('article_content', function($table){
+            $table->engine = 'InnoDB';
+            $table->integer('id_article');
+            $table->integer('id_lang');
+            $table->longText('content');
             $table->timestamps();
         });
     }
@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('article_content');
     }
 
 }
