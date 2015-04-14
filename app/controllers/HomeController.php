@@ -15,7 +15,6 @@ class HomeController extends BaseController {
     |
     */
     public function v1(){
-        // $link['archive'] = 
         return View::make('blade.welcome.v1');
     }
 }
