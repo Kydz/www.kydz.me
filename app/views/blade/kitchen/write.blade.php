@@ -7,7 +7,10 @@
 
 @section('body')
 <div>
-    <?php echo Form::textarea('content', '', array('id' => 'content'))?>
+    <form action="<?php echo Config::get('app.kitchenUrl')?>cook/save" method="POST" enctype="multipart/form-data">
+        <?php echo Form::textarea('content', '', array('id' => 'content', 'name' => 'content'))?>
+        <input type="submit" value="Submit" />
+    </form>
 </div>
 @stop
 

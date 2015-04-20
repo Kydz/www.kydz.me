@@ -34,6 +34,7 @@ Route::get('/archive', 'ArchiveController@showList');
 
 Route::group(array('domain' => 'kitchen.kydz.dev'), function(){
     Route::get('/cook/write', 'CookController@write');
+    Route::post('/cook/save', 'CookController@save');
 });
 
 /* end */
