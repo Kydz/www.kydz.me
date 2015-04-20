@@ -12,7 +12,7 @@ class CreateArticleCateLangTable extends Migration {
      */
     public function up()
     {
-        Schema::create('article_cate_lang', function($table){
+        Schema::create('article_cates_langs', function($table){
             $table->engine = 'InnoDB';
             $table->integer('article_cate_id');
             $table->string('cate_name', 64);
@@ -27,7 +27,7 @@ class CreateArticleCateLangTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('article_cate_lang');
+        Schema::drop('article_cates_langs');
     }
 
 }
