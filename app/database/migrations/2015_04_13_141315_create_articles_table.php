@@ -16,8 +16,8 @@ class CreateArticlesTable extends Migration {
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('id_cate');
-            $table->integer('id_member');
+            $table->integer('cate_id');
+            $table->integer('member_id');
             $table->smallInteger('active');
             $table->timestamps();
         });

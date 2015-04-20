@@ -12,10 +12,10 @@ class CreateArticleContentTable extends Migration {
      */
     public function up()
     {
-        Schema::create('article_content', function($table){
+        Schema::create('article_contents', function($table){
             $table->engine = 'InnoDB';
-            $table->integer('id_article');
-            $table->integer('id_lang');
+            $table->integer('article_id');
+            $table->integer('lang_id');
             $table->longText('content');
             $table->timestamps();
         });
@@ -28,7 +28,7 @@ class CreateArticleContentTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('article_content');
+        Schema::drop('article_contents');
     }
 
 }

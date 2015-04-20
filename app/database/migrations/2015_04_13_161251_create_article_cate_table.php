@@ -12,7 +12,7 @@ class CreateArticleCateTable extends Migration {
      */
     public function up()
     {
-        Schema::create('article_cate', function($table){
+        Schema::create('article_cates', function($table){
             $table->engine = 'InnoDB';
             $table->increments('id');
         });
@@ -25,7 +25,7 @@ class CreateArticleCateTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('article_cate');
+        Schema::drop('article_cates');
     }
 
 }
