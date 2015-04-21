@@ -2,8 +2,8 @@
 
 class Article extends Eloquent {
 
-    public function articleContents(){
-        return $this->hasMany('ArticleContent');
+    public function content(){
+        return $this->hasOne('ArticleContent')->where('lang_id', '=', 1);
     }
 
     public function articleCate(){

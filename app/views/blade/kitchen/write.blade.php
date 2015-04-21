@@ -8,6 +8,8 @@
 @section('body')
 <div>
     <form action="<?php echo Config::get('app.kitchenUrl')?>cook/save" method="POST" enctype="multipart/form-data">
+        <h3>Title</h3>
+        <input name="title" type="text" />
         <?php echo Form::textarea('content', '', array('id' => 'content', 'name' => 'content'))?>
         <input type="submit" value="Submit" />
     </form>

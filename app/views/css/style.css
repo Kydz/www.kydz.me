@@ -22,6 +22,14 @@ body{
     font-size: 32px;
 }
 
+.pager {
+}
+.pager li{
+    float: left;
+    display: block;
+    padding: 0 10px 0 10px;
+    font-size: 18px;
+}
 /********COMMON*****START********/
 .fl{
     float: left;
