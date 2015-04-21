@@ -17,6 +17,7 @@ class CreateArticleContentTable extends Migration {
             $table->integer('article_id');
             $table->integer('lang_id');
             $table->longText('content');
+            $table->string('title', 255);
             $table->timestamps();
         });
     }
