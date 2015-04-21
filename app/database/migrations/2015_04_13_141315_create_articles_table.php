@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration {
             $table->integer('cate_id');
             $table->integer('member_id');
             $table->smallInteger('active');
+            $table->integer('hit');
             $table->timestamps();
         });
     }
