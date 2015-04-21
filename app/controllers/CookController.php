@@ -10,13 +10,13 @@ class CookController extends BaseController{
         $content = Input::get('content');
         $articleContent = new ArticleContent();
         $article = new Article();
-        $article->id_cate = 1;
-        $article->id_member = 2;
+        $article->cate_id = 1;
+        $article->member_id = 2;
         $article->active = 1;
         $article->save();
         $articleContent->content = $content;
-        $articleContent->id_article = $article->id;
-        $articleContent->id_lang = 1;
+        $articleContent->article_id = $article->id;
+        $articleContent->lang_id = 1;
         $articleContent->save();
         echo "1";
     }

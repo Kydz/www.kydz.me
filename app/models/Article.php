@@ -2,7 +2,7 @@
 
 class Article extends Eloquent {
 
-    public function contents(){
+    public function articleContents(){
         return $this->hasMany('ArticleContent');
     }
 
