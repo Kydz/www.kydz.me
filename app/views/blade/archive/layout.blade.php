@@ -11,7 +11,9 @@
     <header>
         <h1>ARCHIVE</h1>
         <nav>
-            @yield('navigation')
+            <ul>
+                <li>未分类</li>
+            </ul>
         </nav>
     </header>
     <div id="main">
