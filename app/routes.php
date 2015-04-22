@@ -27,6 +27,7 @@ Route::get('/home', 'HomeController@v1');
 
 Route::get('/archive/{page}', 'ArchiveController@showList');
 Route::get('/archive', 'ArchiveController@showList');
+Route::get('/article', 'ArchiveController@showArticle');
 
 /* end */
 
