@@ -2,7 +2,7 @@
 
 class CookController extends BaseController{
 
-    public function write(){
+    public function write($id = 0){
         return View::make('blade.kitchen.write');
     }
 
@@ -24,5 +24,12 @@ class CookController extends BaseController{
         if($articleContent->save()) {
             return Redirect::to('cook/write');
         } else echo "0";
+    }
+
+    public function items(){
+        $articles = Article::with('content')->paginate(30);
+        // var_dump($articles);
+        foreach ($articles as $article) {
+        }
     }
 }
