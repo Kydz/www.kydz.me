@@ -14,6 +14,7 @@ class CreateArticleContentTable extends Migration {
     {
         Schema::create('article_contents', function($table){
             $table->engine = 'InnoDB';
+            $table->increments('id');
             $table->integer('article_id');
             $table->integer('lang_id');
             $table->longText('content');

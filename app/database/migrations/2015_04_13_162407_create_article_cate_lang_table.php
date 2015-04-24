@@ -14,6 +14,7 @@ class CreateArticleCateLangTable extends Migration {
     {
         Schema::create('article_cates_langs', function($table){
             $table->engine = 'InnoDB';
+            $table->increments('id');
             $table->integer('article_cate_id');
             $table->string('cate_name', 64);
             $table->string('cate_desc', 256);
