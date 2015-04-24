@@ -25,7 +25,6 @@ Route::get('/', 'HomeController@v1');
 
 Route::get('/home', 'HomeController@v1');
 
-// Route::get('/archive/{page}', 'ArchiveController@showList');
 Route::get('/archive/{id}.html', 'ArchiveController@showArticle');
 Route::get('/archive', 'ArchiveController@showList');
 
@@ -33,8 +32,8 @@ Route::get('/archive', 'ArchiveController@showList');
 
 /* back controller*/
 Route::group(array('domain' => 'kitchen.kydz.dev'), function(){
-    Route::get('/cook/write', 'CookController@write');
-    Route::post('/cook/save', 'CookController@save');
+    Route::get('/cook/write/{id}', 'CookController@write');
+    Route::post('/cook/save/{id}', 'CookController@save');
     Route::get('/cook/items', 'CookController@items');
 });
 

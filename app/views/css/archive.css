@@ -3,8 +3,7 @@
 }
 
 .archive{
-	width:70%;
-	color:#333;
+    width:70%;
 }
 
 .archive footer span{
@@ -16,16 +15,22 @@
     margin: 0 0 15px 0;    
 }
 
-.archive_itme{
+.archive_item{
     border-bottom: solid 1px #ccc;
     margin-bottom: 25px;
 }
+.archive_item a{
+    padding: 3px;
+}
+.archive_item a:hover{
+    background-color: beige;
+}
 
 .archive_list header{
-	font-size:24px;
+    font-size:24px;
 }
 .archive_list section{
-    min-height: 70px;
+    min-height: 50px;
 }
 .archive_list footer{
     text-align: right;

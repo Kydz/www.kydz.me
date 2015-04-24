@@ -13,7 +13,9 @@
     <header>
         <h1>Kitchen</h1>
         <nav>
-            @yield('navigation')
+            <ul>
+                <li>Fresh MEAT</li>
+            </ul>
         </nav>
     </header>
     <div id="main">

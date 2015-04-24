@@ -1,16 +1,10 @@
 @extends('blade.kitchen.layout')
-@section('navigation')
-<ul>
-    <li>写写写</li>
-</ul>
-@stop
-
 @section('body')
 <div>
-    <form action="<?php echo Config::get('app.kitchenUrl')?>cook/save" method="POST" enctype="multipart/form-data">
+    <form action="{{Config::get('app.kitchenUrl')}}cook/save/@if($article == null)0 @else{{$article->id}} @endif" method="POST" enctype="multipart/form-data">
         <h3>Title</h3>
-        <input name="title" type="text" />
-        <?php echo Form::textarea('content', '', array('id' => 'content', 'name' => 'content'))?>
+        {{Form::text('title', isset($article->content->title)?$article->content->title:'', array('id' => 'title', 'name' => 'title'))}}
+        {{Form::textarea('content', isset($article->content->content)?$article->content->content:'', array('id' => 'content', 'name' => 'content'))}}
         <input type="submit" value="Submit" />
     </form>
 </div>
