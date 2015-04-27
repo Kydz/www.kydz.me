@@ -12,7 +12,7 @@
         <h1>ARCHIVE</h1>
         <nav>
             <ul>
-                <li>Unsort</li>
+                <li>未分类</li>
             </ul>
         </nav>
     </header>
