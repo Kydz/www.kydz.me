@@ -2,6 +2,8 @@
 
 class CookController extends BaseController{
 
+
+
     public function write($id = 0){
         if($id > 0){
             $article = Article::with('content')->find($id);
@@ -12,6 +14,11 @@ class CookController extends BaseController{
     }
 
     public function save($id=0){
+        $pass = Input::get('pass');
+        if($pass != Config::get('app.cookPass')){
+            echo 0;
+            exit();
+        }
         $content = Input::get('content');
         $title = Input::get('title');
         if($id > 0){

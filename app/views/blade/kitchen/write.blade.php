@@ -3,8 +3,9 @@
 <div>
     <form action="{{Config::get('app.kitchenUrl')}}cook/save/@if($article == null)0 @else{{$article->id}} @endif" method="POST" enctype="multipart/form-data">
         <h3>Title</h3>
-        {{Form::text('title', isset($article->content->title)?$article->content->title:'', array('id' => 'title', 'name' => 'title'))}}
-        {{Form::textarea('content', isset($article->content->content)?$article->content->content:'', array('id' => 'content', 'name' => 'content'))}}
+        <div>{{Form::text('title', isset($article->content->title)?$article->content->title:'', array('id' => 'title', 'name' => 'title'))}}</div>
+        <div>{{Form::textarea('content', isset($article->content->content)?$article->content->content:'', array('id' => 'content', 'name' => 'content'))}}</div>
+        <div>{{Form::text('pass', '', array('id' => 'pass', 'name' => 'pass'))}}</div>
         <input type="submit" value="Submit" />
     </form>
 </div>

@@ -1,5 +1,6 @@
 body{
-	font-family:"微软雅黑";
+    font-family:"微软雅黑";
+    background-color: #ece3d4;
 }
 
 a {
@@ -15,8 +16,8 @@ a:visited {
 }
 
 #wrapper { 
-	width:1000px;
-	margin:0 auto;
+    width:1000px;
+    margin:0 auto;
 }
 
 #wrapper nav{
@@ -49,5 +50,35 @@ a:visited {
 }
 .fr{
     float: right;
+}
+.c1{
+    color: #f0c4a7;
+}
+.c2{
+    color: #f0c9a8;
+}
+.c3{
+    color: #cfacb3;
+}
+.c4{
+    color: #f8e5ab;
+}
+.c5{
+    color: #16a13a;
+}
+.c6{
+    color: #ece3d4;
+}
+.c7{
+    color: #1baa41;
+}
+.c8{
+    color: #007db3;
+}
+.c9{
+    color: #008fbb;
+}
+.c10{
+    color: #0097c4;
 }
 /********COMMON*****END********/
