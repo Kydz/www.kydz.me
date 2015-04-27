@@ -20,7 +20,7 @@
     margin-bottom: 25px;
 }
 .archive_item a{
-    padding: 3px;
+    padding: 3px 6px 3px 6px;
 }
 .archive_item a:hover{
     background-color: beige;
