@@ -20,18 +20,20 @@ Route::get('addons/{path}', 'MiscFileController@getAddOn');
 /* end */
 
 /* front controller */
+Route::group(array('domain' => 'www.kydz.dev'), function(){
+    Route::get('/', 'HomeController@v1');
 
-Route::get('/', 'HomeController@v1');
+    Route::get('/home', 'HomeController@v1');
 
-Route::get('/home', 'HomeController@v1');
-
-Route::get('/archive/{id}.html', 'ArchiveController@showArticle');
-Route::get('/archive', 'ArchiveController@showList');
+    Route::get('/archive/{id}.html', 'ArchiveController@showArticle');
+    Route::get('/archive', 'ArchiveController@showList');	
+});
 
 /* end */
 
 /* back controller*/
 Route::group(array('domain' => 'kitchen.kydz.dev'), function(){
+    Route::get('/cook/write', 'CookController@write');
     Route::get('/cook/write/{id}', 'CookController@write');
     Route::post('/cook/save/{id}', 'CookController@save');
     Route::get('/cook/items', 'CookController@items');
