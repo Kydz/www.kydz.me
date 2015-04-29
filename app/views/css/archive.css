@@ -24,6 +24,9 @@
 }
 .archive_item a:hover{
 }
+.archive_item footer span{
+    margin-left: 15px;
+}
 
 .archive_list header{
     font-size:24px;
