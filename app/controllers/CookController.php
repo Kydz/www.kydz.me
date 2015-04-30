@@ -21,12 +21,14 @@ class CookController extends BaseController{
         }
         $content = Input::get('content');
         $title = Input::get('title');
+        $brief = Input::get('brief', $content);
+        $brief = mb_substr(strip_tags($brief), 0, 255, 'utf-8').'...';
         if($id > 0){
             //save updates
             $contentObj = Article::find($id)->content;
             $contentObj->content = $content;
             $contentObj->title = $title;
-            $contentObj->brief = mb_substr(strip_tags($content), 0, 255, 'utf-8').'...';
+            $contentObj->brief = $brief;
             $contentObj->touch();
             $re = $contentObj->save();
         }else{
@@ -40,7 +42,7 @@ class CookController extends BaseController{
             $articleContent->content = $content;
             $articleContent->lang_id = 1;
             $articleContent->title = $title;
-            $articleContent->brief = mb_substr(strip_tags($content), 0, 255, 'utf-8').'...';
+            $articleContent->brief = $brief;
             $re = $article->content()->save($articleContent);
         }
         if($re) {
