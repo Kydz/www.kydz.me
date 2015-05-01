@@ -20,7 +20,7 @@ Route::get('addons/{path}', 'MiscFileController@getAddOn');
 /* end */
 
 /* front controller */
-Route::group(array('domain' => 'www.kydz.dev'), function(){
+Route::group(array('domain' => Config::get('app.domain')), function(){
     Route::get('/', 'HomeController@v1');
 
     Route::get('/home', 'HomeController@v1');
@@ -32,7 +32,7 @@ Route::group(array('domain' => 'www.kydz.dev'), function(){
 /* end */
 
 /* back controller*/
-Route::group(array('domain' => 'kitchen.kydz.dev'), function(){
+Route::group(array('domain' => Config::get('app.kitchenDomain')), function(){
     Route::get('/cook/write', 'CookController@write');
     Route::get('/cook/write/{id}', 'CookController@write');
     Route::post('/cook/save/{id}', 'CookController@save');

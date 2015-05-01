@@ -57,7 +57,7 @@ class CookController extends BaseController{
     }
 
     public function items(){
-        $articles = Article::with('content')->paginate(30);
+        $articles = Article::with('content')->orderBy('created_at', 'desc')->paginate(30);
         return View::make('blade.kitchen.items')->with('articles', $articles);
     }
 }
