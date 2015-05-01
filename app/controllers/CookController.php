@@ -21,26 +21,34 @@ class CookController extends BaseController{
         }
         $content = Input::get('content');
         $title = Input::get('title');
+        $brief = Input::get('brief', $content);
+        $active = Input::get('active', 0);
+        $brief = mb_substr(strip_tags($brief), 0, 252, 'utf-8');
+        if(strlen($brief) >= 252){
+            $brief .= '...';
+        }
         if($id > 0){
             //save updates
-            $contentObj = Article::find($id)->content;
+            $articleObj = Article::find($id);
+            $articleObj->active = $active;
+            $contentObj = $articleObj->content;
             $contentObj->content = $content;
             $contentObj->title = $title;
-            $contentObj->brief = mb_substr(strip_tags($content), 0, 255, 'utf-8').'...';
+            $contentObj->brief = $brief;
             $contentObj->touch();
-            $re = $contentObj->save();
+            $re = $contentObj->save() && $articleObj->save();
         }else{
             $article = new Article();
             $article->cate_id = 1;
             $article->member_id = 2;
-            $article->active = 1;
+            $article->active = $active;
             $article->hit = 0;
             $article->save();
             $articleContent = new ArticleContent();
             $articleContent->content = $content;
             $articleContent->lang_id = 1;
             $articleContent->title = $title;
-            $articleContent->brief = mb_substr(strip_tags($content), 0, 255, 'utf-8').'...';
+            $articleContent->brief = $brief;
             $re = $article->content()->save($articleContent);
         }
         if($re) {
@@ -49,7 +57,7 @@ class CookController extends BaseController{
     }
 
     public function items(){
-        $articles = Article::with('content')->paginate(30);
+        $articles = Article::with('content')->orderBy('created_at', 'desc')->paginate(30);
         return View::make('blade.kitchen.items')->with('articles', $articles);
     }
 }

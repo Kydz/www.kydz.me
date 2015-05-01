@@ -1,6 +1,5 @@
 body{
     font-family:"微软雅黑";
-    background-color: #ece3d4;
 }
 
 a {
@@ -33,6 +32,11 @@ a:visited {
     display: block;
     padding: 0 10px 0 10px;
     font-size: 32px;
+}
+
+
+footer{
+    height: 100px;
 }
 
 .pager {

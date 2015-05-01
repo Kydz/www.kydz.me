@@ -6,6 +6,6 @@
     <section>
         {{$article->content->content}}
     </section>
-    <footer><span>{{$article->created_at}}</span><span>{{$article->hit}}</span><span class="like"></span></footer>
+    <footer><span>{{$article->updated_at}}</span><span class="like"></span></footer>
 </div>
 @stop
