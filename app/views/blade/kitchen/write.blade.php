@@ -7,7 +7,7 @@
         <div class="form-control"><section>Pass:</section>{{Form::text('pass', '', array('id' => 'pass', 'name' => 'pass', 'type' => 'password'))}}</div>
         <div class="form-control"><section>Content:</section></div>
         <div class="form-control">{{Form::textarea('content', isset($article->content->content)?$article->content->content:'', array('id' => 'content', 'name' => 'content'))}}</div>
-        <div class="form-control"><input type="submit" value="Submit" /></div>
+        <div class="form-control"><section>Set to active:{{Form::checkbox('active', 1, (isset($article->active)&&$article->active==1)?true:false)}}&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit" /></section></div>
     </form>
 </div>
 @stop

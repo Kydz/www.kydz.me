@@ -26,7 +26,7 @@ Route::group(array('domain' => 'www.kydz.dev'), function(){
     Route::get('/home', 'HomeController@v1');
 
     Route::get('/archive/{id}.html', 'ArchiveController@showArticle');
-    Route::get('/archive', 'ArchiveController@showList');	
+    Route::get('/archive', 'ArchiveController@showList');
 });
 
 /* end */

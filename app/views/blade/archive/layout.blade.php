@@ -12,7 +12,7 @@
         <h1>ARCHIVE</h1>
         <nav>
             <ul>
-                <li>未分类</li>
+                <li>分类系统建设中</li>
             </ul>
         </nav>
     </header>

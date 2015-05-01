@@ -22,20 +22,26 @@ class CookController extends BaseController{
         $content = Input::get('content');
         $title = Input::get('title');
         $brief = Input::get('brief', $content);
-        $brief = mb_substr(strip_tags($brief), 0, 255, 'utf-8').'...';
+        $active = Input::get('active', 0);
+        $brief = mb_substr(strip_tags($brief), 0, 252, 'utf-8');
+        if(strlen($brief) >= 252){
+            $brief .= '...';
+        }
         if($id > 0){
             //save updates
-            $contentObj = Article::find($id)->content;
+            $articleObj = Article::find($id);
+            $articleObj->active = $active;
+            $contentObj = $articleObj->content;
             $contentObj->content = $content;
             $contentObj->title = $title;
             $contentObj->brief = $brief;
             $contentObj->touch();
-            $re = $contentObj->save();
+            $re = $contentObj->save() && $articleObj->save();
         }else{
             $article = new Article();
             $article->cate_id = 1;
             $article->member_id = 2;
-            $article->active = 1;
+            $article->active = $active;
             $article->hit = 0;
             $article->save();
             $articleContent = new ArticleContent();
