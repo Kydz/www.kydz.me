@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Archive</title>
+@section('seo')
+@show
 {{ HTML::style('css/style.css') }}
 {{ HTML::style('css/archive.css') }}
 </head>

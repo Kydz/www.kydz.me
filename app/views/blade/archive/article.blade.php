@@ -1,4 +1,10 @@
 @extends('blade.archive.layout')
+
+@section('seo')
+<title>@if($article->content != null){{$article->content->title}} |@endif Archive</title>
+<meta name="description" content="{{$article->content->brief}}" />
+@stop
+
 @section('body')
 <div class="archive_article archive">
     <header>{{$article->content->title}}</header>

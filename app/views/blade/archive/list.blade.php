@@ -1,4 +1,9 @@
 @extends('blade.archive.layout')
+
+@section('seo')
+<title>Archive</title>
+@stop
+
 @section('body')
 <div class="archive_list">
     @foreach($articles as $article)
