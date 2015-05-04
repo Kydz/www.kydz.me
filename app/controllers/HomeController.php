@@ -15,7 +15,17 @@ class HomeController extends BaseController {
     |
     */
     public function v1(){
-        // $link['archive'] = 
-        return View::make('blade.welcome.v1');
+        $timeEnd = strtotime('2015-06-07');
+        $now = time();
+        $remain = $timeEnd - $now;
+        $day = floor($remain/86400);
+        if($day == 0){
+            $timerStr = 'THAT`S THE DAY';
+        }elseif($day > 0){
+            $timerStr = $day . 'DAYS';
+        }else{
+            $timerStr = '';
+        }
+        return View::make('blade.welcome.v1')->with('timer', $timerStr);
     }
 }

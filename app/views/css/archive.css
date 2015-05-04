@@ -1,29 +1,62 @@
 /********ARCHIVE*****START********/
 .archive_list{
-	width:70%;
+}
+
+.archive{
+    width:70%;
+}
+
+.archive footer span{
+    margin: 0 0 0 15px;
+    color: #777;
 }
 
 .archive_list *{
     margin: 0 0 15px 0;    
-	color:#333;
 }
 
-.archive_itme{
+.archive_item{
     border-bottom: solid 1px #ccc;
     margin-bottom: 25px;
 }
+.archive_item a:hover{
+}
+.archive_item footer span{
+    margin-left: 15px;
+}
 
 .archive_list header{
-	font-size:24px;
+    margin-top: 15px;
+    font-size:30px;
+}
+.archive_item header a{
+    padding: 3px 6px 3px 0;
 }
 .archive_list section{
-    min-height: 70px;
+    min-height: 50px;
 }
 .archive_list footer{
     text-align: right;
+    height: 20px;
 }
-.archive_list footer span{
-    margin: 0 0 0 15px;
-    color: #777;
+
+.archive_article{
+    text-align: center;
+}
+
+.archive_article header{
+    margin-bottom: 20px;
+    font-size: 38px;
+}
+
+.archive_article section{
+    padding: 0 20px 0 80px;
+    text-align: left;
+    border-left: solid 1px #ccc;
+    margin-bottom: 30px;
+}
+
+.archive_article footer{
+    margin-bottom: 30px;
 }
 /********ARCHIVE*****END********/

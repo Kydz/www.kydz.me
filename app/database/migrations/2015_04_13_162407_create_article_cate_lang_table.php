@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration {
+class CreateArticleCateLangTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateUsersTable extends Migration {
      */
     public function up()
     {
-        Schema::create('users', function($table)
-        {
+        Schema::create('article_cates_langs', function($table){
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('email')->unique();
-            $table->string('name');
-            $table->timestamps();
+            $table->integer('article_cate_id');
+            $table->string('cate_name', 64);
+            $table->string('cate_desc', 256);
         });
     }
 
@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('article_cates_langs');
     }
 
 }

@@ -1,13 +1,14 @@
 @extends('blade.kitchen.layout')
-@section('navigation')
-<ul>
-    <li>写写写</li>
-</ul>
-@stop
-
 @section('body')
 <div>
-    <?php echo Form::textarea('content', '', array('id' => 'content'))?>
+    <form action="{{Config::get('app.kitchenUrl')}}cook/save/@if($article == null)0 @else{{$article->id}} @endif" method="POST" enctype="multipart/form-data">
+        <div class="form-control"><section>Title:</section>{{Form::text('title', isset($article->content->title)?$article->content->title:'', array('id' => 'title', 'name' => 'title'))}}</div>
+        <div class="form-control"><section>Brief:</section>{{Form::textarea('brief', isset($article->content->brief)?$article->content->brief:'', array('id' => 'brief', 'name' => 'brief'))}}</div>
+        <div class="form-control"><section>Pass:</section>{{Form::text('pass', '', array('id' => 'pass', 'name' => 'pass', 'type' => 'password'))}}</div>
+        <div class="form-control"><section>Content:</section></div>
+        <div class="form-control">{{Form::textarea('content', isset($article->content->content)?$article->content->content:'', array('id' => 'content', 'name' => 'content'))}}</div>
+        <div class="form-control"><section>Set to active:{{Form::checkbox('active', 1, (isset($article->active)&&$article->active==1)?true:false)}}&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit" /></section></div>
+    </form>
 </div>
 @stop
 
@@ -24,7 +25,8 @@
                 'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
                 'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
                 'anchor', 'link', 'unlink', '|', 'about'
-                ]
+                ],
+            height:'500px',
         });
     });
 </script>

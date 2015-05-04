@@ -5,6 +5,7 @@
 <title>Let`s cook</title>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 {{ HTML::style('css/style.css') }}
+{{ HTML::style('css/form.css') }}
 {{ HTML::script('addons/kindeditor/kindeditor.js') }}
 {{ HTML::script('addons/kindeditor/lang/zh_CN.js') }}
 </head>
@@ -13,7 +14,9 @@
     <header>
         <h1>Kitchen</h1>
         <nav>
-            @yield('navigation')
+            <ul>
+                <li>Fresh MEAT</li>
+            </ul>
         </nav>
     </header>
     <div id="main">

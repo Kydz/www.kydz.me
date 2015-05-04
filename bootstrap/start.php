@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('CDPC00343'),
+	'local' => array('CD003LIUTING', 'Leoric', 'Whopper'),
 
 ));
 
