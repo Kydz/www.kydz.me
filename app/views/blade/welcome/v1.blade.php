@@ -14,12 +14,14 @@
                 <span>GOOD</span>
             </div>
         </div>
-        <div class="section-mid"></div>
+        <div class="section-mid">
+            <div class="timer">{{$timer}}</div>
             <div class="menu-container">
                  <div>{{HTML::linkAction('ArchiveController@showList', 'A', array(''))}}</div>
                  <div><a href="#">G</a></div>
                  <div><a href="#">O</a></div>
             </div>
+        </div>
         <div class="section-bot"></div>
    </div>
 </body>
