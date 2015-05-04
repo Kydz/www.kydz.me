@@ -24,11 +24,9 @@ Route::group(array('domain' => Config::get('app.domain')), function(){
     Route::get('/', 'HomeController@v1');
 
     Route::get('/home', 'HomeController@v1');
-
     Route::get('/archive/{id}.html', 'ArchiveController@showArticle');
     Route::get('/archive', 'ArchiveController@showList');
 });
-
 /* end */
 
 /* back controller*/
