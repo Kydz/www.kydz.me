@@ -1,5 +1,5 @@
 @extends('blade.kitchen.layout')
-@section('body')
+@section('main')
 <div>
     <form action="{{Config::get('app.kitchenUrl')}}cook/save/@if($article == null)0 @else{{$article->id}} @endif" method="POST" enctype="multipart/form-data">
         <div class="form-control"><section>Title:</section>{{Form::text('title', isset($article->content->title)?$article->content->title:'', array('id' => 'title', 'name' => 'title'))}}</div>

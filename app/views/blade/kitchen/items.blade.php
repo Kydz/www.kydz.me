@@ -1,5 +1,5 @@
 @extends('blade.kitchen.layout')
-@section('body')
+@section('main')
 
 <ul>
 @foreach($articles as $article)
