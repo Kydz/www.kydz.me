@@ -24,6 +24,8 @@
         </div>
         <div class="section-bot"></div>
    </div>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=45238133" charset="UTF-8"></script>
+   @if(App::environment() == 'on')
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=45238133" charset="UTF-8"></script>
+    @endif
 </body>
 </html>

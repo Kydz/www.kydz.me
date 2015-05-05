@@ -4,7 +4,7 @@
 <title>Archive</title>
 @stop
 
-@section('body')
+@section('main')
 <div class="archive_list">
     @foreach($articles as $article)
         @if($article->content != null)
