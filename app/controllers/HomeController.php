@@ -18,7 +18,7 @@ class HomeController extends BaseController {
         $timeEnd = strtotime('2015-06-07');
         $now = time();
         $remain = $timeEnd - $now;
-        $day = floor($remain/86400);
+        $day = ceil($remain/86400);
         if($day == 0){
             $timerStr = 'THAT`S THE DAY';
         }elseif($day > 0){
