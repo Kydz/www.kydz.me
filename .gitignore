@@ -1,4 +1,5 @@
 /app/config/local
+/app/config/on
 /bootstrap/compiled.php
 /vendor
 composer.phar
