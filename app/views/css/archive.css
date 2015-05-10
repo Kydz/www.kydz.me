@@ -44,6 +44,10 @@
     text-align: center;
 }
 
+.archive_article img{
+    max-width: 700px;
+}
+
 .archive_article header{
     margin-bottom: 20px;
     font-size: 38px;
