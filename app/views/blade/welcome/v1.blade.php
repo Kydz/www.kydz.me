@@ -18,7 +18,7 @@
         <div class="section-mid">
             <div class="timer">{{$timer}}</div>
             <div class="menu-container">
-                 <div><a href="#">{{HTML::linkAction('ArchiveController@showList', 'A', array(''))}}</a></div>
+                 <div>{{HTML::linkAction('ArchiveController@showList', 'A', array(''))}}</div>
                  <div><a href="#">G</a></div>
                  <div><a href="#">O</a></div>
             </div>
