@@ -46,6 +46,7 @@
 
 .archive_article img{
     max-width: 700px;
+    height: auto;
 }
 
 .archive_article header{
@@ -71,6 +72,10 @@
     .archive_article section{
         padding: 0px 20px 0 35px;
         margin-left: 20px;
+    }
+    .archive_article img{
+        max-width: 100%;
+        height: auto;
     }
 }
 /********ARCHIVE*****END********/
