@@ -63,4 +63,14 @@
 .archive_article footer{
     margin-bottom: 30px;
 }
+
+@media (max-width: 1000px){
+    .archive{
+        width:100%;
+    }
+    .archive_article section{
+        padding: 0px 20px 0 35px;
+        margin-left: 20px;
+    }
+}
 /********ARCHIVE*****END********/

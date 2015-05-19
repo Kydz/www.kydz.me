@@ -17,7 +17,7 @@ a:visited {
 #wrapper { 
     width:1000px;
     margin:0 auto;
-}
+}    
 
 #wrapper nav{
     height: 100px;
@@ -47,6 +47,14 @@ footer{
     padding: 0 10px 0 10px;
     font-size: 18px;
 }
+
+
+@media (max-width: 1000px){
+    #wrapper { 
+        width:100%;
+    }
+}
+
 
 /********COMMON*****START********/
 .fl{
