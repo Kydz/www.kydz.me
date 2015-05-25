@@ -35,7 +35,7 @@ Route::group(array('domain' => Config::get('app.kitchenDomain')), function(){
     Route::get('/cook/write/{id}', 'CookController@write');
     Route::post('/cook/save/{id}', 'CookController@save');
     Route::get('/cook/items', 'CookController@items');
-    Route::get('/upload', 'CookController@uploadProxy');
+    Route::post('/upload', 'CookController@uploadProxy');
 });
 
 /* end */
