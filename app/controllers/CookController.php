@@ -62,14 +62,17 @@ class CookController extends BaseController{
     }
 
     public function uploadProxy(){
-        $postData['imgFile'] = '@'.$_FILES['imgFile']['tmp_name'];
-        $postData['imgName'] = $_FILES['imgFile']['name'];
+        $postData['fileContent'] = file_get_contents($_FILES['imgFile']['tmp_name']);
+        $postData['fileName'] = $_FILES['imgFile']['name'];
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, Config::get('app.imghost'));
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
         $response = curl_exec($ch);
+        $info = curl_getinfo($ch);
+        $error = curl_error($ch);
+        // var_dump($info, $error);exit;
         echo $response;
         exit;
     }
