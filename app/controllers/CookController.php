@@ -72,7 +72,9 @@ class CookController extends BaseController{
         $response = curl_exec($ch);
         $info = curl_getinfo($ch);
         $error = curl_error($ch);
-        // var_dump($info, $error);exit;
+        if(($end = strpos($response, '<script')) > 0){
+            $response = substr($response, 0, $end);
+        }
         echo $response;
         exit;
     }
