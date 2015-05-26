@@ -1,7 +1,7 @@
 @extends('blade.archive.layout')
 
 @section('seo')
-<title>@if($article->content != null){{$article->content->title}} |@endif Archive</title>
+<title>@if($article->content != null){{$article->content->title}} |@endif Kydz`s Archive</title>
 <meta name="description" content="{{$article->content->brief}}" />
 @stop
 
