@@ -12,10 +12,10 @@
 */
 
 /* handling files */
-Route::pattern('path', '(.*)');
-Route::get('css/{path}', 'MiscFileController@getCSS');
-Route::get('js/{path}', 'MiscFileController@getJS');
-Route::get('addons/{path}', 'MiscFileController@getAddOn');
+Route::pattern('any', '(.*)');
+Route::get('css/{any}', 'MiscFileController@getCSS');
+Route::get('js/{any}', 'MiscFileController@getJS');
+Route::get('addons/{any}', 'MiscFileController@getAddOn');
 
 /* end */
 
@@ -35,6 +35,8 @@ Route::group(array('domain' => Config::get('app.kitchenDomain')), function(){
     Route::get('/cook/write/{id}', 'CookController@write');
     Route::post('/cook/save/{id}', 'CookController@save');
     Route::get('/cook/items', 'CookController@items');
+
+    Route::get('/cook/cates', 'CookController@cates');
     Route::post('/upload', 'CookController@uploadProxy');
 });
 

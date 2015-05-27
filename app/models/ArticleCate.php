@@ -7,6 +7,6 @@ class ArticleCate extends Eloquent {
     }
 
     public function articleCateLang(){
-        return $this->hasMany('ArticleCateLang');
+        return $this->hasMany('ArticleCateLang')->where('id_lang', '=', 1);
     }
 }

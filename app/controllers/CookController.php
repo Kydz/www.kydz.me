@@ -2,8 +2,12 @@
 
 class CookController extends BaseController{
 
-
-
+    /**
+     * start a new article
+     * @author Kydz 2015-05-27
+     * @param  article id $id id
+     * @return n/a      reder page
+     */
     public function write($id = 0){
         if($id > 0){
             $article = Article::with('content')->find($id);
@@ -13,6 +17,12 @@ class CookController extends BaseController{
         return View::make('blade.kitchen.write')->with('article', $article);
     }
 
+    /**
+     * save new article or update an exist one
+     * @author Kydz 2015-05-27
+     * @param  article id $id id
+     * @return n/a      redirect to items list page
+     */
     public function save($id=0){
         $pass = Input::get('pass');
         if($pass != Config::get('app.cookPass')){
@@ -56,11 +66,25 @@ class CookController extends BaseController{
         } else echo "0";
     }
 
+    /**
+     * articles list page
+     * @author Kydz 2015-05-27
+     * @return n/a render page
+     */
     public function items(){
         $articles = Article::with('content')->orderBy('created_at', 'desc')->paginate(30);
         return View::make('blade.kitchen.items')->with('articles', $articles);
     }
 
+    public function cates(){
+        
+    }
+
+    /**
+     * proxy of upload file
+     * @author Kydz 2015-05-27
+     * @return json response from sina app
+     */
     public function uploadProxy(){
         $postData['fileContent'] = file_get_contents($_FILES['imgFile']['tmp_name']);
         $postData['fileName'] = $_FILES['imgFile']['name'];
