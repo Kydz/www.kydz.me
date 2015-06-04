@@ -10,7 +10,7 @@ class CookController extends BaseController{
      */
     public function write($id = 0){
         if($id > 0){
-            $article = Article::with('content')->find($id);
+            $article = Article::find($id);
         }else{
             $article = null;
         }
@@ -41,25 +41,21 @@ class CookController extends BaseController{
             //save updates
             $articleObj = Article::find($id);
             $articleObj->active = $active;
-            $contentObj = $articleObj->content;
-            $contentObj->content = $content;
-            $contentObj->title = $title;
-            $contentObj->brief = $brief;
-            $contentObj->touch();
-            $re = $contentObj->save() && $articleObj->save();
+            $articleObj->content = $content;
+            $articleObj->title = $title;
+            $articleObj->brief = $brief;
+            $articleObj->touch();
+            $re = $articleObj->save();
         }else{
-            $article = new Article();
-            $article->cate_id = 1;
-            $article->member_id = 2;
-            $article->active = $active;
-            $article->hit = 0;
-            $article->save();
-            $articleContent = new ArticleContent();
-            $articleContent->content = $content;
-            $articleContent->lang_id = 1;
-            $articleContent->title = $title;
-            $articleContent->brief = $brief;
-            $re = $article->content()->save($articleContent);
+            $articleObj = new Article();
+            $articleObj->cate_id = 1;
+            $articleObj->member_id = 2;
+            $articleObj->active = $active;
+            $articleObj->hit = 0;
+            $articleObj->content = $content;
+            $articleObj->title = $title;
+            $articleObj->brief = $brief;
+            $re = $articleObj->save();
         }
         if($re) {
             return Redirect::to('cook/items');
@@ -72,7 +68,7 @@ class CookController extends BaseController{
      * @return n/a render page
      */
     public function items(){
-        $articles = Article::with('content')->orderBy('created_at', 'desc')->paginate(30);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(30);
         return View::make('blade.kitchen.items')->with('articles', $articles);
     }
 

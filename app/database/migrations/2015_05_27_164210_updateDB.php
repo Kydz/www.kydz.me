@@ -12,14 +12,23 @@ class UpdateDB extends Migration {
      */
     public function up()
     {
-        Schema::table('article_cates_langs', function($table){
-            $table->integer('lang_id');
+        // update article table columns
+        Schema::table('articles', function($table){
+            $table->longText('content');
+            $table->string('brief', 511);
+            $table->string('title', 255);
         });
+        DB::statement('UPDATE articles a, article_contents ac SET a.content = ac.content, a.brief = ac.brief, a.title = ac.title WHERE a.id = ac.article_id');
+        // drop table article_contents
+        Schema::drop('article_contents');
 
-        Schema::screate('tags', function($table){
-            $table->increments('id');
-            $table->morphs('taggable');
+        // update cate table columns
+        Schema::table('article_cates', function($table){
+            $table->string('cate_name', 64);
+            $table->string('cate_desc', 256);
         });
+        // drop table article_cates_langs
+        Schema::drop('article_cates_langs');
     }
 
     /**
@@ -29,10 +38,6 @@ class UpdateDB extends Migration {
      */
     public function down()
     {
-        Schema::table('article_cates_langs', function($table){
-            
-        });
-
         Schema::drop('tags');
     }
 
