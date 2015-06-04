@@ -31,13 +31,13 @@ Route::group(array('domain' => Config::get('app.domain')), function(){
 
 /* back controller*/
 Route::group(array('domain' => Config::get('app.kitchenDomain')), function(){
-    Route::get('/cook/write', 'CookController@write');
-    Route::get('/cook/write/{id}', 'CookController@write');
-    Route::post('/cook/save/{id}', 'CookController@save');
-    Route::get('/cook/items', 'CookController@items');
+    Route::get('/cook/write', 'ArchiveController@write');
+    Route::get('/cook/write/{id}', 'ArchiveController@write');
+    Route::post('/cook/save/{id}', 'ArchiveController@save');
+    Route::get('/cook/items', 'ArchiveController@items');
 
-    Route::get('/cook/cates', 'CookController@cates');
-    Route::post('/upload', 'CookController@uploadProxy');
+    Route::get('/cook/cates', 'ArchiveController@cates');
+    Route::post('/upload', 'MiscFileController@uploadProxy');
 });
 
 /* end */
