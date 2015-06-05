@@ -16,7 +16,7 @@
 <script type="text/javascript">
     KindEditor.ready(function(K) {
         window.editor = K.create('#content', {
-            uploadJson : '{{URL::action("CookController@uploadProxy")}}',
+            uploadJson : '{{URL::action("MiscFileController@uploadProxy")}}',
             items:[
                 'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
                 'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
