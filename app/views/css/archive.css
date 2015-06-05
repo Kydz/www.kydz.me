@@ -3,7 +3,7 @@
 }
 
 .archive{
-    width:70%;
+    width:85%;
 }
 
 .archive footer span{
@@ -45,7 +45,7 @@
 }
 
 .archive_article img{
-    max-width: 600px;
+    max-width: 800px;
     height: auto;
 }
 
