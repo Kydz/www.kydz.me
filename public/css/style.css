@@ -1,0 +1,96 @@
+body{
+    font-family:"微软雅黑";
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #333;
+}
+
+a:visited {
+    color: #333;
+}
+
+#wrapper { 
+    width:1000px;
+    margin:0 auto;
+}    
+
+#wrapper nav{
+    height: 100px;
+}
+
+#wrapper nav header{
+    color:#111;
+}
+
+#wrapper nav li{
+    float: left;
+    display: block;
+    padding: 0 10px 0 10px;
+    font-size: 32px;
+}
+
+
+footer{
+    height: 100px;
+}
+
+.pager {
+}
+.pager li{
+    float: left;
+    display: block;
+    padding: 0 10px 0 10px;
+    font-size: 18px;
+}
+
+
+@media (max-width: 1000px){
+    #wrapper { 
+        width:100%;
+    }
+}
+
+
+/********COMMON*****START********/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.c1{
+    color: #f0c4a7;
+}
+.c2{
+    color: #f0c9a8;
+}
+.c3{
+    color: #cfacb3;
+}
+.c4{
+    color: #f8e5ab;
+}
+.c5{
+    color: #16a13a;
+}
+.c6{
+    color: #ece3d4;
+}
+.c7{
+    color: #1baa41;
+}
+.c8{
+    color: #007db3;
+}
+.c9{
+    color: #008fbb;
+}
+.c10{
+    color: #0097c4;
+}
+/********COMMON*****END********/

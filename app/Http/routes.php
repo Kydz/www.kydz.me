@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
 
 /*
@@ -27,5 +27,7 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('/home', 'HomeController@v1');
+    Route::get('/archive', 'ArchiveController@showList');
+    Route::get('/archive/{id}', 'ArchiveController@showArticle');
 });
