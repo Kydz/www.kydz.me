@@ -41,6 +41,15 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'urls' => [
+        'www' => env('URL_WWW'),
+        'kitchen' => env('URL_KITCHEN'),
+    ],
+    'domains' => [
+        'www' => env('DOMAIN_WWW'),
+        'kitchen' => env('DOMAIN_KITCHEN'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

@@ -26,8 +26,12 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web'], 'domain' => config('app.domains.www')], function () {
     Route::get('/home', 'HomeController@v1');
     Route::get('/archive', 'ArchiveController@showList');
     Route::get('/archive/{id}', 'ArchiveController@showArticle');
+});
+
+Route::group(['middleware' => ['web'], 'domain' => config('app.domains.kitchen')], function () {
+	
 });
