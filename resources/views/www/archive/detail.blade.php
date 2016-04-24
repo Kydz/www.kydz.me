@@ -1,4 +1,4 @@
-@extends('archive.layout')
+@extends('www.archive.layout')
 
 @section('meta-seo')
 <title>@if($article->content != null){{$article->title}} |@endif Kydz`s Archive</title>

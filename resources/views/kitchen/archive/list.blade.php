@@ -1,4 +1,4 @@
-@extends('blade.kitchen.layout')
+@extends('kitchen.archive.layout')
 @section('main')
 
 <ul>

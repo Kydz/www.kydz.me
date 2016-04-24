@@ -1,4 +1,4 @@
-@extends('archive.layout')
+@extends('www.archive.layout')
 
 @section('seo')
 <title>Archive</title>

@@ -1,4 +1,4 @@
-@extends('blade.master')
+@extends('layouts.master')
 
 @section('seo')
 <title>Let`s cook</title>
@@ -6,9 +6,6 @@
 
 @section('head')
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-{{ HTML::style('css/form.css') }}
-{{ HTML::script('addons/kindeditor/kindeditor.js') }}
-{{ HTML::script('addons/kindeditor/lang/zh_CN.js') }}
 @stop
 
 @section('body')

@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('/home');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -26,12 +22,18 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web'], 'domain' => config('app.domains.www')], function () {
-    Route::get('/home', 'HomeController@v1');
-    Route::get('/archive', 'ArchiveController@showList');
-    Route::get('/archive/{id}', 'ArchiveController@showArticle');
+Route::group(['middleware' => ['web'], 'domain' => config('app.domains.www'), 'namespace' => 'www'], function () {
+    Route::get('/', 'IndexController@v1');
+    Route::get('/index', 'IndexController@v1');
+    Route::get('/archive', 'ArchiveController@displayList');
+    Route::get('/archive/{id}', 'ArchiveController@displayArticle');
 });
 
-Route::group(['middleware' => ['web'], 'domain' => config('app.domains.kitchen')], function () {
-	
+Route::group(['middleware' => ['web'], 'domain' => config('app.domains.kitchen'), 'namespace' => 'kitchen'], function () {
+    Route::get('/', 'ArchiveController@displayList');
+    Route::get('/archive', 'ArchiveController@displayList');
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
