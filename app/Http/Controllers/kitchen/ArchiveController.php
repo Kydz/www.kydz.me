@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\kitchen;
 
 use App\Http\Controllers\Controller as Controller;
+use Illuminate\Http\Request;
+use GrahamCampbell\Markdown\Facades\Markdown as Markdown;
 
 class ArchiveController extends Controller{
     
@@ -21,6 +23,17 @@ class ArchiveController extends Controller{
         return view('kitchen.archive.detail');
     }
 
+    public function postPreview(Request $req)
+    {
+        $content = $req->get('content', '');
+        try {
+            $data = Markdown::convertToHtml($content);
+            return response()->json(['data' => $data, 'code' => 2000]);
+        } catch (Exception $e) {
+            return response()->json(['code' => 2001, 'message' => $e->getMessage()]);
+        }
+    }
+
     /**
      * start a new article
      * @author Kydz 2015-05-27
@@ -35,6 +48,7 @@ class ArchiveController extends Controller{
         }
         return view('blade.kitchen.write')->with('article', $article);
     }
+
 
     /**
      * save new article or update an exist one

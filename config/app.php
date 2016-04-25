@@ -168,6 +168,7 @@ return [
 
         Riari\Forum\ForumServiceProvider::class,
         Riari\Forum\Frontend\ForumFrontendServiceProvider::class,
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
 
     ],
 

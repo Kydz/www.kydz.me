@@ -33,6 +33,7 @@ Route::group(['middleware' => ['web'], 'domain' => config('app.domains.kitchen')
     Route::get('/', 'ArchiveController@displayList');
     Route::get('/archive', 'ArchiveController@displayList');
     Route::get('/archive/new', 'ArchiveController@displayNew');
+    Route::post('/archive/preview', 'ArchiveController@postPreview');
 });
 
 Route::auth();
