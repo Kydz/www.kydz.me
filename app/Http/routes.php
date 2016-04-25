@@ -32,6 +32,7 @@ Route::group(['middleware' => ['web'], 'domain' => config('app.domains.www'), 'n
 Route::group(['middleware' => ['web'], 'domain' => config('app.domains.kitchen'), 'namespace' => 'kitchen'], function () {
     Route::get('/', 'ArchiveController@displayList');
     Route::get('/archive', 'ArchiveController@displayList');
+    Route::get('/archive/new', 'ArchiveController@displayNew');
 });
 
 Route::auth();

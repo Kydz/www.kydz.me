@@ -14,7 +14,7 @@
         <h1>Kitchen</h1>
         <nav>
             <ul>
-                <li>Fresh MEAT</li>
+                <li><a href="/archive/new">New</a></li>
             </ul>
         </nav>
     </header>
