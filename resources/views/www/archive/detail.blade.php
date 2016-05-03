@@ -6,18 +6,25 @@
 @stop
 
 @section('main')
-<div class="archive_article archive">
-    <header>{{$article->title or ''}}</header>
-    <footer><span>{{$article->created_at or ''}}</span><span>{{$article->hit or ''}}</span><span class="like"></span></footer>
-    <section>
-    	@if ($article->type == 1)
-    		{!! \Markdown::convertToHtml($article->content) !!}
-    	@else
-	        {!! $article->content !!}
-    	@endif
+<div>
+    <section class="article-head">
+        <header>{{$article->title or ''}}</header>
+        <footer>
+            <span>{{$article->created_at or ''}}</span><span>{{$article->hit or ''}}</span><span class="like"></span>
+            <p>"{{$article->brief}}"</p>
+        </footer>
     </section>
-    <footer>
-        <span>{{$article->updated_at}}</span><span class="like"></span>
-    </footer>
+    <section class="article-body">
+        @if ($article->type == 1)
+            {!! \Markdown::convertToHtml($article->content) !!}
+        @else
+            {!! $article->content !!}
+        @endif
+    </section>
+    <section class="article-tail">
+        <footer>
+            <span>{{$article->updated_at}}</span><span class="like"></span>
+        </footer>        
+    </section>
 </div>
 @stop
