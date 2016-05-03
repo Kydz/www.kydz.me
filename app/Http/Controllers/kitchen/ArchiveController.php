@@ -18,7 +18,7 @@ class ArchiveController extends BaseController{
     }
 
     public function displayArticle(Request $req, $id = 0)
-    {   
+    {
         try {
             if ($id > 0) {
                 $article = \App\Models\Article::find($id);
@@ -31,11 +31,12 @@ class ArchiveController extends BaseController{
         return view('kitchen.archive.detail')->with(['article' => $article]);
     }
 
-    public function postArticle(Request $req, $id)
+    public function postArticle(Request $req, $id = 0)
     {
         try {
             if ($id > 0) {
                 $article = \App\Models\Article::find($id);
+                $article->fill($req->all());
             } else {
                 $article = new \App\Models\Article($req->all());
             }

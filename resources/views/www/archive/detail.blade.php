@@ -1,16 +1,20 @@
 @extends('www.archive.layout')
 
 @section('meta-seo')
-<title>@if($article->content != null){{$article->title}} |@endif Kydz`s Archive</title>
-<meta name="description" content="{{$article->brief}}" />
+<title>{{$article->title or 'Article'}} | Kydz`s Archive</title>
+<meta name="description" content="{{$article->brief or ''}}" />
 @stop
 
 @section('main')
 <div class="archive_article archive">
-    <header>{{$article->title}}</header>
-    <footer><span>{{$article->created_at}}</span><span>{{$article->hit}}</span><span class="like"></span></footer>
+    <header>{{$article->title or ''}}</header>
+    <footer><span>{{$article->created_at or ''}}</span><span>{{$article->hit or ''}}</span><span class="like"></span></footer>
     <section>
-        {!!$article->content!!}
+    	@if ($article->type == 1)
+    		{!! \Markdown::convertToHtml($article->content) !!}
+    	@else
+	        {!! $article->content !!}
+    	@endif
     </section>
     <footer>
         <span>{{$article->updated_at}}</span><span class="like"></span>
