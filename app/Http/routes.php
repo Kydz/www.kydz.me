@@ -23,6 +23,10 @@
 */
 
 Route::group(['middleware' => ['web'], 'domain' => config('app.domains.www'), 'namespace' => 'www'], function () {
+    Route::get('/login', 'WatchdogController@displayLogin');
+    Route::post('/login', 'WatchdogController@postLogin');
+    Route::get('/logout', 'WatchdogController@getLogout');
+
     Route::get('/', 'IndexController@v1');
     Route::get('/index', 'IndexController@v1');
     Route::get('/archive', 'ArchiveController@displayList');
@@ -30,12 +34,18 @@ Route::group(['middleware' => ['web'], 'domain' => config('app.domains.www'), 'n
 });
 
 Route::group(['middleware' => ['web'], 'domain' => config('app.domains.kitchen'), 'namespace' => 'kitchen'], function () {
-    Route::get('/', 'ArchiveController@displayList');
-    Route::get('/archive', 'ArchiveController@displayList');
-    Route::get('/archive/new', 'ArchiveController@displayNew');
-    Route::post('/archive/preview', 'ArchiveController@postPreview');
-});
+    Route::get('/login', 'WatchdogController@displayLogin');
+    Route::post('/login', 'WatchdogController@postLogin');
+    Route::get('/logout', 'WatchdogController@getLogout');
 
-Route::auth();
+    Route::group(['middleware' => ['auth:admin']], function () {
+        Route::get('/', 'ArchiveController@displayList');
+        Route::get('/archive', 'ArchiveController@displayList');
+        Route::get('/archive/new', 'ArchiveController@displayArticle');
+        Route::get('/archive/{id}', 'ArchiveController@displayArticle');
+        Route::post('/archive/{id}', 'ArchiveController@postArticle');
+        Route::post('/archive/preview', 'ArchiveController@postPreview');
+    });
+});
 
 Route::get('/home', 'HomeController@index');

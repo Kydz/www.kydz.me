@@ -3,7 +3,7 @@
 
 <ul>
 @foreach($articles as $article)
-    <li><a href="{{Config::get('app.kitchenUrl')}}cook/write/{{$article->id}}">@if($article->title != null){{$article->title}}@endif</a></li>
+    <li><a href="{{ url('/archive/'.$article->id) }}">{{$article->title or ''}}</a></li>
 @endforeach
 </ul>
 

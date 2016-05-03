@@ -2,11 +2,18 @@
 @section('main')
 <div>
     <form action="/archive/{{$article->id or 0}}" method="POST" enctype="multipart/form-data">
+        {!!csrf_field()!!}
         <div class="form-control"><section>Title:</section><input name="title" value="{{$article->title or ''}}" /></div>
         <div class="form-control"><section>Brief:</section><input name="brief" value="{{$article->brief or ''}}" /></div>
         <div class="form-control"><section>Content:</section></div>
-        <div class="form-control"><textarea name="content" id="content" cols="75" rows="40">{{$article->content or ''}}</textarea></div>
-        <div class="form-control"><section>Set to active:<input type="submit" value="Submit" /><input type="button" id="btn-preview" value="preview" /></section></div>
+        <div class="form-control"><textarea name="content" id="content" cols="100" rows="40">{{$article->content or ''}}</textarea></div>
+        <div class="form-control"><section>Set to active:<input type="checkbox" name="active" value="1" 
+        @if ($article->active == 1)
+            checked="checked" 
+        @endif
+        /></section></div>
+        <div class="form-control"><section><input type="submit" value="Submit" /><input type="button" id="btn-preview" value="preview" /></section></div>
+        <input type="hidden" value="1" name="type" />
     </form>
     <dir id="preview"></dir>
 </div>
@@ -27,7 +34,6 @@ $(document).ready(function () {
                     alert(re.message.error);
                 }
             }
-
         });
     });
 });

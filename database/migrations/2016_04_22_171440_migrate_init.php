@@ -32,6 +32,6 @@ class MigrateInit extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('articles');
     }
 }

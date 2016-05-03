@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\kitchen;
 
-use App\Http\Controllers\Controller as Controller;
-use Illuminate\Http\Request;
 use GrahamCampbell\Markdown\Facades\Markdown as Markdown;
+use Illuminate\Http\Request;
 
-class ArchiveController extends Controller{
+class ArchiveController extends BaseController{
     
     /**
      * articles list page
@@ -18,9 +17,32 @@ class ArchiveController extends Controller{
         return view('kitchen.archive.list')->with('articles', $articles);
     }
 
-    public function displayNew()
+    public function displayArticle(Request $req, $id = 0)
+    {   
+        try {
+            if ($id > 0) {
+                $article = \App\Models\Article::find($id);
+            } else {
+                $article = new \App\Models\Article();
+            }
+        } catch (Exception $e) {
+            
+        }
+        return view('kitchen.archive.detail')->with(['article' => $article]);
+    }
+
+    public function postArticle(Request $req, $id)
     {
-        return view('kitchen.archive.detail');
+        try {
+            if ($id > 0) {
+                $article = \App\Models\Article::find($id);
+            } else {
+                $article = new \App\Models\Article($req->all());
+            }
+            $article->save();
+        } catch (Exception $e) {
+        }
+        return redirect('/archive');
     }
 
     public function postPreview(Request $req)
