@@ -31,7 +31,7 @@ $(document).ready(function () {
                 if (re.code == 2000) {
                     $('#preview').html(re.data);
                 } else {
-                    alert(re.message.error);
+                    alert(re.message);
                 }
             }
         });

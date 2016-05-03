@@ -42,9 +42,9 @@ Route::group(['middleware' => ['web'], 'domain' => config('app.domains.kitchen')
         Route::get('/', 'ArchiveController@displayList');
         Route::get('/archive', 'ArchiveController@displayList');
         Route::get('/archive/new', 'ArchiveController@displayArticle');
+        Route::post('/archive/preview', 'ArchiveController@postPreview');
         Route::get('/archive/{id}', 'ArchiveController@displayArticle');
         Route::post('/archive/{id}', 'ArchiveController@postArticle');
-        Route::post('/archive/preview', 'ArchiveController@postPreview');
     });
 });
 
