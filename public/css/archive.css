@@ -75,10 +75,10 @@
 .article-body pre {
     background-color: #ddd;
     padding: 20px;
+    overflow: scroll;
 }
 
 pre code {
-    white-space: pre-line;
 }
 
 .article-tail footer{
@@ -92,6 +92,11 @@ pre code {
     .archive {
         width:100%;
     }
+    
+    .article-head p {
+        padding: 0px 10px;
+    }
+
     .article-body {
         padding: 0px 20px 0 15px;
         margin-left: 10px;
