@@ -75,7 +75,7 @@
 .article-body pre {
     background-color: #ddd;
     padding: 20px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 pre code {
