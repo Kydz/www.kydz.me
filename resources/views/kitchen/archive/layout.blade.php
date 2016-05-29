@@ -4,10 +4,6 @@
 <title>Let`s cook</title>
 @stop
 
-@section('head')
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-@stop
-
 @section('body')
 <div id="wrapper">
     <header>
@@ -25,4 +21,23 @@
     <footer>
     </footer>
 </div>
+@stop
+
+@section('js')
+<script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.3.0.min.js"></script>
+<script type="text/javascript">
+  var client = new OSS.Wrapper({
+    region: '<oss region>',
+    accessKeyId: '<Your accessKeyId>',
+    accessKeySecret: '<Your accessKeySecret>',
+    bucket: '<Your bucket name>'
+  });
+  client.list({
+    'max-keys': 10
+  }).then(function (result) {
+    console.log(result);
+  }).catch(function (err) {
+    console.log(err);
+  });
+</script>
 @stop
