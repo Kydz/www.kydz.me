@@ -8,9 +8,29 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span12">
-            <form>
+            <form action="/archive/{{$article->id or 0}}" method="POST" enctype="multipart/form-data">
                 <fieldset>
-                     <legend>表单项</legend> <label>表签名</label><textarea name="content" id="content" cols="100" rows="40">{{$article->content or ''}}</textarea> <span class="help-block">这里填写帮助信息.</span> <label class="checkbox"><input type="checkbox" /> 勾选同意</label> <button type="submit" class="btn">提交</button>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input name="title" class="form-control" value="{{$article->title or ''}}" placeholder="标题" />
+                    </div>
+                    <div class="form-group">
+                        <label>Brief</label>
+                        <input name="brief" class="form-control" value="{{$article->brief or ''}}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <textarea name="content" id="content">{{$article->content or ''}}</textarea>
+                    </div>
+                    <div class="checkbox">
+                        <label class="checkbox"><input type="checkbox" name="active" value="1" 
+                        @if ($article->active == 1)
+                            checked="checked" 
+                        @endif
+                        /> Active?</label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>  
+                    <input type="hidden" value="1" name="type" />
                 </fieldset>
             </form>
         </div>
@@ -22,7 +42,21 @@
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js"></script>
 <script type="text/javascript" src="/js/editor.js"></script>
 <script type="text/javascript" src="/js/marked.js"></script>
+<script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.3.0.min.js"></script>
 <script type="text/javascript">
+// var client = new OSS.Wrapper({
+// region: '<oss region>',
+// accessKeyId: '<Your accessKeyId>',
+// accessKeySecret: '<Your accessKeySecret>',
+// bucket: '<Your bucket name>'
+// });
+// client.list({
+// 'max-keys': 10
+// }).then(function (result) {
+// console.log(result);
+// }).catch(function (err) {
+// console.log(err);
+// });
 $(document).ready(function () {
     var markdown = $('#content').val();
     var editor = new Editor({
