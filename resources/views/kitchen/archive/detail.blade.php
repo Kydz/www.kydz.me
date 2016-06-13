@@ -9,6 +9,7 @@
     <div class="row-fluid">
         <div class="span12">
             <form action="/archive/{{$article->id or 0}}" method="POST" enctype="multipart/form-data">
+                {!!csrf_field()!!}
                 <fieldset>
                     <div class="form-group">
                         <label>Title</label>
