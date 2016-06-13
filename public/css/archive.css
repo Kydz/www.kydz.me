@@ -66,9 +66,8 @@
 }
 
 .article-body {
-    padding: 1px 20px 0 80px;
+    padding: 0px 30px;
     text-align: left;
-    border-left: solid 1px #ccc;
     margin-bottom: 30px;
 }
 
@@ -93,15 +92,15 @@ pre code {
     .archive {
         width:100%;
     }
+
+    .article-body {
+        padding: 0px 15px;
+    }
     
     .article-head p {
         padding: 0px 10px;
     }
 
-    .article-body {
-        padding: 0px 20px 0 15px;
-        margin-left: 10px;
-    }
     .article-body img{
         min-width: 100%;
         max-width: 100%;
