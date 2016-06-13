@@ -1,7 +1,4 @@
 /********ARCHIVE*****START********/
-.archive_list{
-}
-
 .archive{
     width:85%;
 }
@@ -11,33 +8,38 @@
     color: #777;
 }
 
-.archive_list *{
+.archive-list *{
     margin: 0 0 15px 0;    
+}
+
+.archive-list header{
+    margin-top: 15px;
+    font-size:30px;
+}
+
+.archive-list section{
+    min-height: 50px;
+}
+
+.archive-list footer{
+    text-align: right;
+    min-height: 20px;
 }
 
 .archive_item{
     border-bottom: solid 1px #ccc;
     margin-bottom: 25px;
 }
+
 .archive_item a:hover{
 }
+
 .archive_item footer span{
     margin-left: 15px;
 }
 
-.archive_list header{
-    margin-top: 15px;
-    font-size:30px;
-}
 .archive_item header a{
     padding: 3px 6px 3px 0;
-}
-.archive_list section{
-    min-height: 50px;
-}
-.archive_list footer{
-    text-align: right;
-    height: 20px;
 }
 
 .article-head {
