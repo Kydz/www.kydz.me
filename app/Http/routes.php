@@ -27,6 +27,9 @@ Route::group(['middleware' => ['web'], 'domain' => config('app.domains.www'), 'n
     Route::post('/login', 'WatchdogController@postLogin');
     Route::get('/logout', 'WatchdogController@getLogout');
 
+    Route::get('/test', function () {
+        echo 'logged';
+    });
     Route::get('/', 'IndexController@v1');
     Route::get('/index', 'IndexController@v1');
     Route::get('/archive', 'ArchiveController@displayList');

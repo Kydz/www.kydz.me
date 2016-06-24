@@ -1,7 +1,8 @@
 @extends('www.archive.layout')
 
-@section('seo')
-<title>Archive</title>
+@section('meta-seo')
+<title>Kydz`s Archive</title>
+<meta name="description" content="Kydz`s Archive, a personal life recorder" />
 @stop
 
 @section('main')

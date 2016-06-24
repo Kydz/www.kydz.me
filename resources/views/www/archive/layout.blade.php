@@ -22,3 +22,7 @@
     </footer>
 </div>
 @stop
+
+@section('js')
+<script type="text/javascript" src="/js/archive.js" ></script>
+@stop

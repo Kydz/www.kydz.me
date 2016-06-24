@@ -42,6 +42,10 @@
     padding: 3px 6px 3px 0;
 }
 
+.archive_item:last-child {
+    border-bottom: none;
+}
+
 .article-head {
     text-align: center;
 }
@@ -95,8 +99,20 @@ pre code {
         width:100%;
     }
 
-    .article-body {
+    .archive-list > article {
         padding: 0px 15px;
+    }
+
+    .article-body {
+        padding: 0px;
+    }
+
+    .article-body > p, h1, h2, h3, h4 {
+        padding: 0px 15px;
+    }
+
+    .article-body > pre {
+        border-radius: 0px;
     }
     
     .article-head p {
