@@ -85,6 +85,7 @@
 
 pre code {
     color: #2DFF00;
+    white-space: pre;
 }
 
 .article-tail footer{
