@@ -2,6 +2,7 @@
 
 @section('head-css')
 <link rel="stylesheet" type="text/css" href="/css/archive.css" />
+<link rel="stylesheet" href="/css/highlight-style.css">
 @stop
 
 @section('body')
@@ -25,4 +26,6 @@
 
 @section('js')
 <script type="text/javascript" src="/js/archive.js" ></script>
+<script type="text/javascript" src="/js/highlight.pack.js" ></script>
+<script>hljs.initHighlightingOnLoad();</script>
 @stop

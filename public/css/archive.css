@@ -78,13 +78,13 @@
 }
 
 .article-body pre {
-    background-color: #444;
-    padding: 20px;
+    background-color: #000;
+    padding: 0px;
     overflow: auto;
 }
 
 pre code {
-    color: #2DFF00;
+    color: #fff;
     white-space: pre;
 }
 
