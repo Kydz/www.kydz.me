@@ -37,6 +37,7 @@ class ArchiveController extends BaseController{
             if ($id > 0) {
                 $article = \App\Models\Article::find($id);
                 $article->fill($req->all());
+                $article->active = $req->get('active', 0);
             } else {
                 $article = new \App\Models\Article($req->all());
             }

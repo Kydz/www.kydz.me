@@ -1,7 +1,18 @@
+@extends('layouts.master')
+
+@section('head-css')
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+@show
+
+@section('head-js')
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+@stop
+
+@section('body')
 <div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="navbar">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="navbar-nav">
                 <div class="navbar-inner">
                     <div class="container-fluid">
                          <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">网站名</a>
@@ -76,14 +87,14 @@
             </div>
         </div>
     </div>
-    <div class="row-fluid">
-        <div class="span2">
+    <div class="row">
+        <div class="col-md-2">
         </div>
-        <div class="span6">
+        <div class="col-md-6">
             <ul class="thumbnails">
-                <li class="span4">
+                <li class="col-md-4">
                     <div class="thumbnail">
-                        <img alt="300x200" src="img/people.jpg" />
+                        <img alt="300x200"/>
                         <div class="caption">
                             <h3>
                                 冯诺尔曼结构
@@ -97,9 +108,9 @@
                         </div>
                     </div>
                 </li>
-                <li class="span4">
+                <li class="col-md-4">
                     <div class="thumbnail">
-                        <img alt="300x200" src="img/city.jpg" />
+                        <img alt="300x200" />
                         <div class="caption">
                             <h3>
                                 哈佛结构
@@ -113,9 +124,9 @@
                         </div>
                     </div>
                 </li>
-                <li class="span4">
+                <li class="col-md-4">
                     <div class="thumbnail">
-                        <img alt="300x200" src="img/sports.jpg" />
+                        <img alt="300x200"/>
                         <div class="caption">
                             <h3>
                                 改进型哈佛结构
@@ -131,7 +142,7 @@
                 </li>
             </ul>
         </div>
-        <div class="span4">
+        <div class="col-md-4">
             <ul class="nav nav-list">
                 <li class="nav-header">
                     列表标题
@@ -163,3 +174,4 @@
         </div>
     </div>
 </div>
+@stop

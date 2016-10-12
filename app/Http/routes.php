@@ -28,7 +28,7 @@ Route::group(['middleware' => ['web'], 'domain' => config('app.domains.www'), 'n
     Route::get('/logout', 'WatchdogController@getLogout');
 
     Route::get('/test', function () {
-        echo 'logged';
+        return view('html.index');
     });
     Route::get('/', 'IndexController@v1');
     Route::get('/index', 'IndexController@v1');
