@@ -1,31 +1,25 @@
-@extends('layouts.master')
+@extends('layouts.www')
 
-@section('head-css')
-<link rel="stylesheet" type="text/css" href="/css/archive.css" />
-<link rel="stylesheet" href="/css/highlight-style.css">
-@stop
-
-@section('body')
-<div id="wrapper">
-    <header>
-        <h1>ARCHIVE</h1>
-        <nav>
-            <ul>
-                <li>分类系统建设中</li>
-            </ul>
-        </nav>
-    </header>
-    <div id="main">
-        @section('main')
+@section('room')
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item">热门阅读</li>
+            @foreach ($hot as $article)
+                <a href="{{ url('archive', [$article->id]) }}">
+                    <li class="list-group-item">
+                        <span class="badge">{{ $article->hit }}</span>
+                        {{ $article->title }}
+                    </li>
+                </a>
+            @endforeach
+        </ul>
+    </div>
+    <div class="col-md-9 col-lg-6">
+        @section('content')
         @show
     </div>
-    <footer>
-    </footer>
+    <div class="col-lg-3 col-md-0">
+    </div>
 </div>
-@stop
-
-@section('js')
-<script type="text/javascript" src="/js/archive.js" ></script>
-<script type="text/javascript" src="/js/highlight.pack.js" ></script>
-<script>hljs.initHighlightingOnLoad();</script>
 @stop

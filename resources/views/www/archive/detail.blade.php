@@ -1,19 +1,24 @@
 @extends('www.archive.layout')
 
-@section('meta-seo')
+@section('ceil-seo')
 <title>{{$article->title or 'Article'}} | Kydz`s Archive</title>
 <meta name="description" content="{{$article->brief or ''}}" />
 @stop
 
-@section('main')
+@section('ceil-css')
+<link rel="stylesheet" type="text/css" href="/css/highlight-style.css">
+@stop
+
+
+@section('content')
 <div>
-    <section class="article-head">
+    {{-- <section class="article-head">
         <header>{{$article->title or ''}}</header>
         <footer>
             <span>{{$article->created_at or ''}}</span><span>{{$article->hit or ''}}</span><span class="like"></span>
             <p>"{{$article->brief}}"</p>
         </footer>
-    </section>
+    </section> --}}
     <section class="article-body">
         @if ($article->type == 1)
             {!! \Markdown::convertToHtml($article->content) !!}
@@ -27,4 +32,10 @@
         </footer>        
     </section>
 </div>
+@stop
+
+@section('floor-js')
+<script type="text/javascript" src="/js/archive.js" ></script>
+<script type="text/javascript" src="/js/highlight.pack.js" ></script>
+<script>hljs.initHighlightingOnLoad();</script>
 @stop
