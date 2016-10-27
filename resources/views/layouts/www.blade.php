@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid room">
 @include('www.common.nav')
 @section('room')
 @show

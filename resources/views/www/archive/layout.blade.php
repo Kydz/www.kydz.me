@@ -1,25 +1,28 @@
 @extends('layouts.www')
 
+@section('ceil-css')
+<link rel="stylesheet" type="text/css" href="/css/highlight-style.css">
+<link rel="stylesheet" type="text/css" href="/css/archive.css">
+@stop
+
 @section('room')
-<div class="row">
-    <div class="col-md-3">
-        <ul class="list-group">
-            <li class="list-group-item">热门阅读</li>
+<div class="row main">
+    <div class="col-md-3 page-left">
+        <div class="list-group">
+            <a class="list-group-item disabled">TOP 5</a>
             @foreach ($hot as $article)
-                <a href="{{ url('archive', [$article->id]) }}">
-                    <li class="list-group-item">
-                        <span class="badge">{{ $article->hit }}</span>
-                        {{ $article->title }}
-                    </li>
+                <a class="list-group-item" href="{{ url('archive', [$article->id]) }}">
+                    <span class="badge">{{ $article->hit }}</span>
+                    {{ $article->title }}
                 </a>
             @endforeach
-        </ul>
+        </div>
     </div>
-    <div class="col-md-9 col-lg-6">
+    <div class="col-md-9 col-lg-8 page-middle">
         @section('content')
         @show
     </div>
-    <div class="col-lg-3 col-md-0">
-    </div>
+    {{-- <div class="col-md-0 col-lg-1 page-right">
+    </div> --}}
 </div>
 @stop

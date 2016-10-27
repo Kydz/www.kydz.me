@@ -1,17 +1,23 @@
 @extends('www.archive.layout')
 
+@section('ceil-css')
+<link rel="stylesheet" type="text/css" href="/css/archive.css">
+@show
+
 @section('content')
 <div class="row">
-    @foreach ($list as $article)
-    <div class="col-sm-6 col-md-6 col-lg-4">
+    @foreach ($list as $key => $article)
+    <div class="col-sm-6 col-md-6 list-item">
         <a href="{{ url('archive', [$article->id]) }}">
             <div class="thumbnail">
+                <div class="brief">
                 @if (!empty($article->cover_img))
                     <img src="avatar.jpg" alt="...">
                 @else
                     <p>{{ $article->brief }}</p>
                 @endif
-                <div class="caption">
+                </div>
+                <div class="title">
                     <h3>{{ $article->title }}</h3>
                 </div>
             </div>
