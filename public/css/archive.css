@@ -77,10 +77,22 @@ pre code {
 
 .thumbnail {
     height: 300px;
+    text-align: center;
+    /*text-decoration: none;*/
 }
 
 .title {
     padding: 10px;
+    display: block;
+    overflow: hidden;
+    height: 30%;
+    border-top: solid 1px;
+    border-top-color: #f1f1f1;
+}
+
+.title h3 {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 

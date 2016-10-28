@@ -1,9 +1,5 @@
 @extends('www.archive.layout')
 
-@section('ceil-css')
-<link rel="stylesheet" type="text/css" href="/css/archive.css">
-@show
-
 @section('content')
 <div class="row">
     @foreach ($list as $key => $article)
