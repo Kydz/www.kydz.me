@@ -96,7 +96,7 @@ pre code {
 }
 
 
-@media (max-width: 1200px){
+@media (max-width: 1199px){
     .archive {
         /*width:100%;*/
     }
@@ -132,7 +132,7 @@ pre code {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .page-left {
         display: none;
     }
@@ -141,12 +141,23 @@ pre code {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .page-left {
         display: none;
     }
+
     .page-middle {
         width: 100%;
         padding: 0px;
     }
+
+    .page-middle .row {
+        margin: 0px;
+    }
+
+    .list-item {
+        padding: 0px;
+    }
 }
+
+
