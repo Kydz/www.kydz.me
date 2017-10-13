@@ -22,6 +22,11 @@
 |
 */
 
+Route::group(['middleware' => ['web'], 'domain' => 'kydz.me', 'namespace' => 'www'], function () {
+    Route::get('/', 'IndexController@v1');
+});
+
+
 Route::group(['middleware' => ['web'], 'domain' => config('app.domains.www'), 'namespace' => 'www'], function () {
     Route::get('/login', 'WatchdogController@displayLogin');
     Route::post('/login', 'WatchdogController@postLogin');

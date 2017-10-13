@@ -6,3 +6,4 @@ Homestead.json
 .env
 deploy.php
 .idea
+npm-debug.log
