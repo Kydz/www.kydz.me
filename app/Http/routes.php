@@ -22,8 +22,11 @@
 |
 */
 
-Route::group(['middleware' => ['web'], 'domain' => 'kydz.me', 'namespace' => 'www'], function () {
+Route::group(['middleware' => ['web'], 'domain' => '', 'namespace' => 'www'], function () {
     Route::get('/', 'IndexController@v1');
+    Route::get('/index', 'IndexController@v1');
+    Route::get('/archive', 'ArchiveController@displayList');
+    Route::get('/archive/{id}', 'ArchiveController@displayArticle');
 });
 
 
