@@ -7,3 +7,5 @@ Homestead.json
 deploy.php
 .idea
 npm-debug.log
+
+*.DS_store
